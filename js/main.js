@@ -11,7 +11,14 @@ $(function(){
 		// 	$('div:first', $(this)).fadeIn('normal', 'swing');
 		// 	$('div:last', $(this)).fadeOut('narmal', 'swing');
 		// }
-	)
+	);
+
+	$("#questions div.batch div.question").each(function(){
+		if($(this).find('ul li').length > 5){
+			$(this).width(($(this).width()*2) + 20);
+			$(this).find('.right h2').width($(this).find('.right h2').width() * 2);
+		}
+	});
 
 	//make the select null answer turn to gray
 	$(".choices").change(function () {
@@ -51,11 +58,11 @@ $(function(){
 	})
 
 	var wdoc = $(document).width();
-	var margins = wdoc - 775;
+	var margins = wdoc - 970;
 	$('div.batch').css('padding-left', margins/2);
 
 	//$('#question .batch:last').show();
-	$('.main#quiz').height(1865);
+	$('.main#quiz').height(1300);
 	$('.main#quiz').width($(window).width());
 
 	//$('#wrapper, #question').css({'left': '-1240px'});
@@ -82,14 +89,14 @@ $(function(){
 
 		if(!empty.length){
 			$('#wrapper, #question').animate({
-				left: -(margins/2 + 800),
+				left: -(margins/2 + 970),
 			}, 900, 'swing');
 			
 			$.scrollTo('#question', { 
 				duration: 900, 
 				easing:'swing', 
 				onAfter: function(){
-					$('.main#quiz').height(1665);
+					$('.main#quiz').height(1350);
 				}});
 
 			$(this).fadeOut();

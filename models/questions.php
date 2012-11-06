@@ -3,7 +3,7 @@
 class Questions{
 
 	static public function retrieveAll($conn){
-		$query = "select * from questions";
+		$query = "select * from questions order by rank";
 
 		$result = $conn->query($query);
 		$array = array();

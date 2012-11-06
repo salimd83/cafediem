@@ -31,7 +31,7 @@ $questions = Questions::retrieveAll($conn);
 
 	<div class="main" id="quiz">
 		<div id="wrapper">
-			<div id="question">
+			<div id="questions">
 				<div class="batch">
 					<p class="error"></p>
 
@@ -44,14 +44,19 @@ $questions = Questions::retrieveAll($conn);
 							$id = $question->getId();
 					?>
 
-							<div>
+							<div class="question">
 								<dl>
-									<dt><?php printf('%02d',$i); ?></dt>
+									<dt>
+										<div class="left"><?php printf('%02d',$i); ?></div>
+										<div class="right"><h2><?php echo $sQuestion; ?></h2></div>
+									</dt>
 									<dd>
-										<h2><?php echo $sQuestion; ?></h2>
+										
+
 										<?php if($type == 'open'): ?>
 											<textarea placeholder="Answer goes here..." name="<?php echo $id; ?>"></textarea>
 										<?php else: ?>
+
 											<select 
 													name="<?php echo $id; ?>" 
 													id="<?php echo $id; ?>"
@@ -59,27 +64,42 @@ $questions = Questions::retrieveAll($conn);
 													<?php if($type == 'multichoice')  
 																echo "multiple size='2' style='height:86px'"; ?>
 											>
-											<?php $choices = $question->getChoices($conn); ?>
-											<?php if($type != 'multichoice'): ?>
-												<option style="color:#ccc;" selected="selected" value="0">
-													Choose answer
-												</option>
-											<?php endif; ?>
-											<?php foreach($choices as $choice): ?>
-												<option value="<?php echo $choice->getId(); ?>">
-													<?php echo ucwords(html_entity_decode($choice->getAnswer())); ?>
-												</option>
-											<?php endforeach; ?>
-											<?php if($i <= 2): ?>
-												<option class="other" value="other">Other</option>
-											<?php endif; ?>
+												<?php 
+													$choices = $question->getChoices($conn);
+													$ulContent = '';
+												?>
+
+												<?php if($type != 'multichoice'): ?>
+													<option style="color:#ccc;" selected="selected" value="0">
+														Choose answer
+													</option>
+												<?php endif; ?>
+
+												<?php foreach($choices as $choice): ?>
+													<?php $answer = ucwords(html_entity_decode($choice->getAnswer())); ?>
+													<option value="<?php echo $choice->getId(); ?>">
+														<?php echo $answer; ?>
+													</option>
+													<?php $ulContent .= "<li><a href='#'>{$answer}</a></li>"; ?>
+												<?php endforeach; ?>
+
+												<?php if($i <= 2): ?>
+													<option class="other" value="other">Other</option>
+													<?php $ulContent .= "<li><input type='text' placeholder='other' /></li>"; ?>
+												<?php endif; ?>
+
 											</select>
+
 										<?php endif; ?>
+
+										<ul <?php if(stripos($sQuestion, 'pay for meal') !== false) echo "class='arrange-cubic'" ?>>
+											<?php echo $ulContent; ?>
+										</ul>
 									</dd>
 								</dl>
 							</div>
 
-							<?php if($i == 10): ?>
+							<?php if($i == 9): ?>
 
 								</div> <!-- END of (first) .batch -->
 
