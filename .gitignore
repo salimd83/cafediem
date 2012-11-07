@@ -6,6 +6,7 @@
 
 # Ignore bundler config
 config.php
+*.db
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
