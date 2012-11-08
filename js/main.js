@@ -1,5 +1,5 @@
 $(function(){
-	$('#question div.socials .logo-quiz a:last').click(
+	$('#questions div.socials .logo-quiz a:last').click(
 		function(){ 
 			$('div:first', $(this).closest('div.socials'))
 				.fadeOut('normal', 'swing');
@@ -37,23 +37,31 @@ $(function(){
 	});
 	$(".choices").change();
 
-	$('#question div.socials .m-over').click(function(){ 
+	$('#questions div.socials .m-over').click(function(){ 
 		$('div:first', $(this).closest('div.socials'))
 			.fadeIn('normal', 'swing');
 		$('div:last', $(this).closest('div.socials'))
-			.fadeOut('narmal', 'swing');
+			.fadeOut('normal', 'swing');
 		return false;
 	})
 
-	$('#question .batch :not(socials) ul li a').click(function(){
+	$('#questions .batch :not(socials) ul li a').click(function(){
 		if(!$(this).closest('ul').hasClass('multi-2')){
 			$(this).closest('ul').find('li a').removeClass('selected');
+			$(this).closest('dd').find('select option').removeAttr('selected');
 		}else if($(this).closest('ul').hasClass('multi-2') && 
 				 $('.multi-2 .selected').length == 2)
 		{
 			$(this).closest('ul').find('li a').removeClass('selected');
+			$(this).closest('dd').find('select option').removeAttr('selected');
 		}
 		$(this).addClass('selected');
+		if($(this).closest('ul').hasClass('multi-2')){
+			liIndex = $(this).closest('ul').find('li').index($(this).closest('li'));
+		}else{
+			liIndex = $(this).closest('ul').find('li').index($(this).closest('li')) + 1;
+		}
+		$(this).closest('dd').find('select option:eq('+ liIndex +')').attr("selected", "selected");
 		return false;
 	})
 
@@ -61,11 +69,11 @@ $(function(){
 	var margins = wdoc - 970;
 	$('div.batch').css('padding-left', margins/2);
 
-	//$('#question .batch:last').show();
+	//$('#questions .batch:last').show();
 	$('.main#quiz').height(1350);
 	$('.main#quiz').width($(window).width());
 
-	//$('#wrapper, #question').css({'left': '-1240px'});
+	//$('#wrapper, #questions').css({'left': '-1240px'});
 	//$('.batch').wrap('<div class="batch-wrapper">');
 
 	//validate when clicking on next
@@ -74,7 +82,7 @@ $(function(){
 		var empty = new Array();
 		var i = 0;
 
-		$('#question .batch div').not('.socials').each(function(){
+		$('#questions .batch div.question').not('.socials').each(function(){
 			if(i<9){
 				if(	
 					$(this).find('select').length && 
@@ -88,11 +96,11 @@ $(function(){
 		})
 
 		if(!empty.length){
-			$('#wrapper, #question').animate({
+			$('#wrapper, #questions').animate({
 				left: -(margins/2 + 970),
 			}, 900, 'swing');
 			
-			$.scrollTo('#question', { 
+			$.scrollTo('#questions', { 
 				duration: 900, 
 				easing:'swing', 
 				onAfter: function(){
@@ -105,13 +113,13 @@ $(function(){
 			
 		}else{
 			
-			$.scrollTo('#question', {
+			$.scrollTo('#questions', {
 										duration: 300, 
 										easing:'swing', 
 										onAfter: function(){
 											$('.error')
 												.html('please answer all the \
-													question before \
+													questions before \
 													proceeding')
 												.slideDown('normal', 'swing')
 										}
@@ -122,7 +130,7 @@ $(function(){
 		return false;
 	});
 
-	// $('#question div.batch textarea').each(function(){
+	// $('#questions div.batch textarea').each(function(){
 	// 	$(this).height(
 	// 		$(this).closest('div').height() - 
 	// 		$(this).closest('div').find('img').height() -
@@ -135,7 +143,7 @@ $(function(){
 		var empty2 = new Array();
 		var i = 0;
 //alert(empty2.length);
-		$('#question .batch div').not('.socials').each(function(){
+		$('#questions .batch div.question').not('.socials').each(function(){
 			if(i<18){
 				if(	
 					$(this).find('select').length && 
@@ -150,7 +158,7 @@ $(function(){
 
 		if(empty2.length){
 			//alert(empty2.length);
-			$.scrollTo('#question', {
+			$.scrollTo('#questions', {
 										duration: 300, 
 										easing:'swing', 
 										onAfter: function(){
@@ -166,7 +174,7 @@ $(function(){
 			return false
 		}
 		i=0;
-		$('#question .batch div').not('.socials').each(
+		$('#questions .batch div').not('.socials').each(
 			function(){
 				if(i < 18){
 					if($(this).find('select').length){

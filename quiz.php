@@ -70,7 +70,7 @@ $questions = Questions::retrieveAll($conn);
 												?>
 
 												<?php if($type != 'multichoice'): ?>
-													<option style="color:#ccc;" selected="selected" value="0">
+													<option style="color:#ccc;" value="0">
 														Choose answer
 													</option>
 												<?php endif; ?>
@@ -90,11 +90,13 @@ $questions = Questions::retrieveAll($conn);
 
 											</select>
 
+											<ul class='<?php if(stripos($sQuestion, 'pay for meal') !== false) echo "arrange-cubic" ?>
+													  <?php if($type == 'multichoice') echo " multi-2" ?>'>
+												<?php echo $ulContent; ?>
+											</ul>
+
 										<?php endif; ?>
 
-										<ul <?php if(stripos($sQuestion, 'pay for meal') !== false) echo "class='arrange-cubic'" ?>>
-											<?php echo $ulContent; ?>
-										</ul>
 									</dd>
 								</dl>
 							</div>
