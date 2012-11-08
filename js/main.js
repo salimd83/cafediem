@@ -62,7 +62,7 @@ $(function(){
 	$('div.batch').css('padding-left', margins/2);
 
 	//$('#question .batch:last').show();
-	$('.main#quiz').height(1200);
+	$('.main#quiz').height(1350);
 	$('.main#quiz').width($(window).width());
 
 	//$('#wrapper, #question').css({'left': '-1240px'});
@@ -96,7 +96,7 @@ $(function(){
 				duration: 900, 
 				easing:'swing', 
 				onAfter: function(){
-					$('.main#quiz').height(1250);
+					$('.main#quiz').height(1400);
 				}});
 
 			$(this).fadeOut();

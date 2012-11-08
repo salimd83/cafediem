@@ -115,17 +115,11 @@ $questions = Questions::retrieveAll($conn);
 					<div class="socials">
 						<div class="m-default">
 							<div class="logo-quiz">
-								<a href="index.php" style="display:block; height:339px;">
-									<img src="images/end-of-quiz-home.gif"
-										 width="462"
-										 height="339" />
-								</a>
-
-								<a href="#" id="end-quiz">
-									<!-- <img src="images/end-of-quiz-socials.gif" /> -->
-								</a>
+								<p>AAAND WE’RE DONE!</p>
+								<input type="button" id="submit" value="Did I win?" />
 							</div>
 						</div>
+
 						<div class="m-over">
 							<ul>
 								<li>
@@ -142,7 +136,7 @@ $questions = Questions::retrieveAll($conn);
 						</div>
 					</div> <!-- END .socials -->
 
-					<input type="button" id="submit" value="Submit Answers" />
+					
 				</div> <!-- END of (second and last) .batch -->
 				<div class="clear"></div>
 			</div><!-- END #questions -->
@@ -151,7 +145,7 @@ $questions = Questions::retrieveAll($conn);
 	</div><!-- END  .main -->
 
 	<div class="link-btn footer">
-		<a href="quiz.php">Start Here</a>
+		<a href="quiz.php">one more batch to go! <span style="font-family:arial, sans-serif; font-size:52px;">&rsaquo;</span></a>
 	</div>
 
 </body>
