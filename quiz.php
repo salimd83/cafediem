@@ -69,11 +69,9 @@ $questions = Questions::retrieveAll($conn);
 													$ulContent = '';
 												?>
 
-												<?php if($type != 'multichoice'): ?>
-													<option style="color:#ccc;" value="0">
-														Choose answer
-													</option>
-												<?php endif; ?>
+												<option style="color:#ccc;" value="0" selected="selected">
+													Choose answer
+												</option>
 
 												<?php foreach($choices as $choice): ?>
 													<?php $answer = ucwords(html_entity_decode($choice->getAnswer())); ?>
