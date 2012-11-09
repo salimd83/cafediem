@@ -47,14 +47,21 @@ $(function(){
 
 	$('#questions .batch :not(socials) ul li a').click(function(){
 		if(!$(this).closest('ul').hasClass('multi-2')){
+
 			$(this).closest('ul').find('li a').removeClass('selected');
 			$(this).closest('dd').find('select option').removeAttr('selected');
+
 		}else if($(this).closest('ul').hasClass('multi-2') && 
 				 $('.multi-2 .selected').length == 2)
 		{
 			$(this).closest('ul').find('li a').removeClass('selected');
 			$(this).closest('dd').find('select option').removeAttr('selected');
 		}
+
+		if($(this).closest('ul').find('li input').length){
+			$(this).closest('ul').find('li input').removeClass('selected');
+		}
+
 		$(this).addClass('selected');
 		if($(this).closest('ul').hasClass('multi-2')){
 			liIndex = $(this).closest('ul').find('li').index($(this).closest('li'));
@@ -63,6 +70,11 @@ $(function(){
 		}
 		$(this).closest('dd').find('select option:eq('+ liIndex +')').attr("selected", "selected");
 		return false;
+	})
+
+	$('#questions .batch :not(socials) ul li input.other').click(function(){
+		$('#questions .batch :not(socials) ul li a').removeClass('selected');
+		$(this).addClass('selected');
 	})
 
 	var wdoc = $(document).width();
@@ -88,7 +100,18 @@ $(function(){
 					$(this).find('select').length && 
 					$(this).find('select').val()==0
 				  )
-					empty[i] = i;
+				{
+					if($(this).find('input.other.selected').length && 
+					   $(this).find('input.other.selected').val() != 'other' &&
+					   $(this).find('input.other.selected').val() != '')
+					{
+						var other = $(this).find('input.other');
+						$(this).find('select').append("<option value='other' selected='selected'>"+other.val()+"</option>");
+
+					}else{
+						empty[i] = i;
+					}
+				}
 
 				else if($(this).find('textarea').val() == '') empty[i] = i;
 				i++;
@@ -137,11 +160,23 @@ $(function(){
 
 		$('#questions .batch div.question').not('.socials').each(function(){
 			if(i<18){
+
 				if(	
 					$(this).find('select').length && 
 					$(this).find('select').val()==0
 				  )
-					empty2[i] = i;
+				{
+					if($(this).find('input.other.selected').length && 
+					   $(this).find('input.other.selected').val() != 'other' &&
+					   $(this).find('input.other.selected').val() != '')
+					{
+						var other = $(this).find('input.other');
+						$(this).find('select').append("<option value='other' selected='selected'>"+other.val()+"</option>")
+
+					}else{
+						empty2[i] = i;
+					}
+				}
 
 				else if($(this).find('textarea').val() == '') empty2[i] = i;
 				i++;
@@ -171,11 +206,8 @@ $(function(){
 				if(i < 18){
 					if($(this).find('select').length){
 						var select = $(this).find('select');
-						if(select.val() == 'other'){
-							query[select.attr('name')] = select.next('input.other').val();
-						}else{
-							query[select.attr('name')] = select.val();
-						}
+						
+						query[select.attr('name')] = select.val();
 						// if(elem.length){
 						// 	query['data_'+i] = "";
 						// 	elem.each(function(){

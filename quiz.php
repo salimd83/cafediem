@@ -82,8 +82,8 @@ $questions = Questions::retrieveAll($conn);
 												<?php endforeach; ?>
 
 												<?php if($i <= 2): ?>
-													<option class="other" value="other">Other</option>
-													<?php $ulContent .= "<li><input type='text' placeholder='other' /></li>"; ?>
+													<!-- <option class="other" value="other">Other</option> -->
+													<?php $ulContent .= "<li><input type='text' class='other' placeholder='other' /></li>"; ?>
 												<?php endif; ?>
 
 											</select>
