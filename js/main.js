@@ -64,17 +64,21 @@ $(function(){
 
 		$(this).addClass('selected');
 		if($(this).closest('ul').hasClass('multi-2')){
-			liIndex = $(this).closest('ul').find('li').index($(this).closest('li'));
+			liIndex = $(this).closest('ul').find('li').index($(this).closest('li')) + 1;
 		}else{
 			liIndex = $(this).closest('ul').find('li').index($(this).closest('li')) + 1;
 		}
+		//var id = $(this).closest('li').attr('id');
+		//alert($(this).closest('dd').find('select option[value:'+id+']').val());
 		$(this).closest('dd').find('select option:eq('+ liIndex +')').attr("selected", "selected");
+		//$(this).closest('dd').find('select option[value='+id+']').attr("selected", "selected");
 		return false;
 	})
 
 	$('#questions .batch :not(socials) ul li input.other').click(function(){
-		$('#questions .batch :not(socials) ul li a').removeClass('selected');
+		$(this).closest('ul').find('li a').removeClass('selected');
 		$(this).addClass('selected');
+		$(this).closest('dd').find('select option:not(option[value=0])').removeAttr('selected')
 	})
 
 	var wdoc = $(document).width();
@@ -98,15 +102,16 @@ $(function(){
 			if(i<9){
 				if(	
 					$(this).find('select').length && 
-					$(this).find('select').val()==0
+					($(this).find('select').val()==0 || typeof $(this).find('select').val() === 'undefined')
 				  )
 				{
 					if($(this).find('input.other.selected').length && 
 					   $(this).find('input.other.selected').val() != 'other' &&
 					   $(this).find('input.other.selected').val() != '')
 					{
+						
 						var other = $(this).find('input.other');
-						$(this).find('select').append("<option value='other' selected='selected'>"+other.val()+"</option>");
+						$(this).find('select').append("<option value='" + other.val() + "' selected='selected'>" + other.val() + "</option>");
 
 					}else{
 						empty[i] = i;
@@ -163,7 +168,7 @@ $(function(){
 
 				if(	
 					$(this).find('select').length && 
-					$(this).find('select').val()==0
+					($(this).find('select').val()==0 || typeof $(this).find('select').val() === 'undefined')
 				  )
 				{
 					if($(this).find('input.other.selected').length && 
@@ -171,7 +176,7 @@ $(function(){
 					   $(this).find('input.other.selected').val() != '')
 					{
 						var other = $(this).find('input.other');
-						$(this).find('select').append("<option value='other' selected='selected'>"+other.val()+"</option>")
+						$(this).find('select').append("<option value='"+other.val()+"' selected='selected'>"+other.val()+"</option>")
 
 					}else{
 						empty2[i] = i;
@@ -206,7 +211,6 @@ $(function(){
 				if(i < 18){
 					if($(this).find('select').length){
 						var select = $(this).find('select');
-						
 						query[select.attr('name')] = select.val();
 						// if(elem.length){
 						// 	query['data_'+i] = "";

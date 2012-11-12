@@ -78,7 +78,7 @@ $questions = Questions::retrieveAll($conn);
 													<option value="<?php echo $choice->getId(); ?>">
 														<?php echo $answer; ?>
 													</option>
-													<?php $ulContent .= "<li><a href='#'>{$answer}</a></li>"; ?>
+													<?php $ulContent .= "<li id='".$choice->getId()."'><a href='#'>{$answer}</a></li>"; ?>
 												<?php endforeach; ?>
 
 												<?php if($i <= 2): ?>
