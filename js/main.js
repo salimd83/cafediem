@@ -163,6 +163,8 @@ $(function(){
 		var empty2 = new Array();
 		var i = 0;
 
+		$('#submit').attr('disabled', 'disabled');
+
 		$('#questions .batch div.question').not('.socials').each(function(){
 			if(i<18){
 
@@ -246,7 +248,13 @@ $(function(){
 		  data: query
 		}).done(function( msg ) {
 		  console.log( "Data Saved: " + msg );
-		  $('#submit').attr('disabled', 'disabled');
+		  var points = parseInt(msg);
+		  $('.m-default').fadeOut(300);
+		  if(points > 9){ 
+		  	$('.winner').fadeIn(300);
+		  }else{
+		  	$('.loose').fadeIn(300)
+		  }
 		});
 	});
 

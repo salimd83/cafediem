@@ -120,7 +120,38 @@ $questions = Questions::retrieveAll($conn);
 							</div>
 						</div>
 
-						<div class="m-over">
+						<div class="winner">
+							<h2>
+								Congratulations!<br />
+								You’ve won an<br />
+								invitation for two!
+							</h2>
+							<p>We’re emailing you with details,<br /> meanwhile...</p>
+							<h3>tell your friends!</h3>
+
+							<ul>
+								<li>
+									<a href="#" target="_blank">
+										<img src="images/facebook.png">
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+										<img src="images/twitter.png">
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="loose">
+							<h2>
+								Sorry<br />
+								You’ve won an<br />
+								invitation for two!
+							</h2>
+							<p>We’re emailing you with details,<br /> meanwhile...</p>
+							<h3>tell your friends!</h3>
+
 							<ul>
 								<li>
 									<a href="#" target="_blank">

@@ -58,6 +58,11 @@ class User{
 
 	public function save(){}
 
-	public function addchoice(){}
+	public function addchoice($choiceId, $conn){
+		$query = "insert into users_choices (user_id, choice_id) values ($this->id, $choiceId)";
+		$conn->query($query);
+
+		return $conn->insert_id;
+	}
 
 }
