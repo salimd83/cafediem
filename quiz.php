@@ -1,6 +1,12 @@
 <?php session_start() ?>
 
 <?php 
+if(!isset($_SESSION['userid'])){
+	header('Location: subscribe.php'); exit;
+}
+?>
+
+<?php 
 require_once('models/questions.php');
 require_once('models/question.php');
 require_once('models/choice.php');

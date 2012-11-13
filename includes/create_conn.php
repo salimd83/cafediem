@@ -1,5 +1,16 @@
 <?php
-require_once('config.php');
+
+if(in_array(@$_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))){
+	define("HOST", 'localhost');
+	define("USER", 'root');
+	define("PASS", '');
+	define("DATABASE", 'cafediem');
+}else{
+	define("HOST", 'localhost');
+	define("USER", 'luapocom_diem');
+	define("PASS", '4yrIre@u1Ovo');
+	define("DATABASE", 'luapcocom_diem');
+}
 
 $conn = new mysqli(HOST, USER, PASS, DATABASE);
 

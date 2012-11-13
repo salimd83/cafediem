@@ -253,7 +253,7 @@ $(function(){
 		  if(points > 9){ 
 		  	$('.winner').fadeIn(300);
 		  }else{
-		  	$('.loose').fadeIn(300)
+		  	$('.loose').fadeIn(300);
 		  }
 		});
 	});

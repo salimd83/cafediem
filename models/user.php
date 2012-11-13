@@ -6,14 +6,22 @@ class User{
 	private $email;
 	private $hasSubmit;
 	private $submitDate;
+	private $score;
 	private $id;
 
-	public function __construct(array $array){
-		$this->name = $array['name'];
-		$this->email = $array['email'];
-		$this->has_submit = $array['has_submit'];
-		$this->submitDate = $array['submit_date'];
-		$this->id = $array['id'];
+	private $conn;
+
+	public function __construct(array $array = array(), $conn){
+		if(!empty($array)){
+			$this->name = $array['name'];
+			$this->email = $array['email'];
+			$this->hasSubmit = $array['has_submit'];
+			$this->submitDate = $array['submit_date'];
+			$this->score = $array['score'];
+			$this->id = $array['id'];
+		}
+
+		$this->conn = $conn;
 	}
 
 	public function getName(){
@@ -28,8 +36,12 @@ class User{
 		return $this->hasSubmit;
 	}
 
-	public function getDate(){
+	public function getSubmitDate(){
 		return $this->submitDate;
+	}
+
+	public function getScore(){
+		return $this->score;
 	}
 
 	public function getId(){
@@ -48,21 +60,35 @@ class User{
 		$this->hasSubmit = $hasSubmit;
 	}
 
-	public function setDate($submitDate){
+	public function setSubmitDate($submitDate){
 		$this->submitDate = $submitDate;
+	}
+
+	public function setScore($score){
+		$this->score = $score;
 	}
 
 	public function setId($id){
 		$this->id = $id;
 	}
 
-	public function save(){}
+	public function save(){
+		$query = "update users 
+				  set name='$this->name', 
+				  	  email='$this->email', 
+				  	  has_submit=$this->hasSubmit, 
+				  	  submit_date='$this->submitDate',
+				  	  score=$this->score
+				  where id = $this->id";
+		$this->conn->query($query);
+		return $query;
+	}
 
-	public function addchoice($choiceId, $conn){
+	public function addchoice($choiceId){
 		$query = "insert into users_choices (user_id, choice_id) values ($this->id, $choiceId)";
-		$conn->query($query);
+		$this->conn->query($query);
 
-		return $conn->insert_id;
+		return $this->conn->insert_id;
 	}
 
 }

@@ -298,20 +298,21 @@ div.batch{ width: 970px; padding-left: 342px; float: left; }
 	padding: 0;
 	padding-left: 10px;
 }
-#questions div.batch div.socials div.winner h2{ 
+#questions div.batch div.socials div.winner h2, #questions div.batch div.socials div.loose h2{ 
 	font-size: 38px; 
 	font-family: 'LeagueGothicRegular', Arial, sans-serif; 
 	text-transform: uppercase;
 	padding-top:40px;
 	margin-bottom: 10px;
 }
-#questions div.batch div.socials div.winner h3{ 
+#questions div.batch div.socials div.winner h3, #questions div.batch div.socials div.loose h3{ 
 	font-size: 36px; 
 	font-family: 'LeagueGothicRegular', Arial, sans-serif; 
 	text-transform: uppercase;
 	margin-top: 10px;
 }
-#questions div.batch div.socials div.winner p{ font-family: Arial, Helvetica, sans-serif; font-size: 16px; }
+#questions div.batch div.socials div.winner p, #questions div.batch div.socials div.loose p
+{ font-family: Arial, Helvetica, sans-serif; font-size: 16px; }
 
 .link-btn.footer{ width: 100%; margin-top: 0px; clear: both; float: left; }
 .link-btn.footer a{ 

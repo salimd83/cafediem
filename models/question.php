@@ -39,7 +39,7 @@ class Question{
 	}
 
 	public function getChoices($conn){
-		$query = "select * from choices where question_id = {$this->getId()} and is_custom = 0";
+		$query = "select * from choices where question_id = {$this->getId()} and is_custom = 0 order by RAND()";
 
 		$result = $conn->query($query);
 		$array = array();

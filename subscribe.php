@@ -25,6 +25,9 @@
 				<?php if(isset($_GET['required'])): ?>
 					<p class="error" style="display: block; width:419px; margin:0;">Both Your name and email are required</p>
 				<?php endif; ?>
+				<?php if(isset($_GET['hasubmit'])): ?>
+					<p class="error" style="display: block; width:419px; margin:0;">Your email is already registered</p>
+				<?php endif; ?>
 				<form name="subscribe" id="subscribe" action="controllers/user.php?a=create" method="post">
 					<input type="text" name="name" placeholder="Full Name" />
 					<input type="text" name="email" placeholder="Email" />

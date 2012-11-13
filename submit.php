@@ -1,9 +1,16 @@
 <?php session_start() ?>
 
 <?php 
+if(!isset($_SESSION['userid'])){
+	header('Location: ../subscribe.php');
+}
+?>
+
+<?php 
 	require_once('models/questions.php');
 	require_once('models/question.php');
 	require_once('models/choice.php');
+	require_once('models/users.php');
 	require_once('models/user.php');
 
 	require_once('includes/create_conn.php');
@@ -12,12 +19,12 @@
 
 	$userId = $_SESSION['userid'];
 
-	$query = "select * from users where id = {$userId}";
-	$result = $conn->query($query);
+	//$query = "select * from users where id = {$userId}";
+	//$result = $conn->query($query);
 
-	$row = $result->fetch_assoc();
+	//$row = $result->fetch_assoc();
 
-	$user = new User($row);
+	$user = Users::retrieveByPk($userId, $conn);
 
 	//echo $user->getName();
 	//echo "\n\r-----------------\n\r";
@@ -79,6 +86,12 @@
 		//echo $question->getType()."\n\r";
 	}
 
+	$date = date('Y-m-d H:i:s');
+	$user->setSubmitDate($date);
+	$user->setHasSubmit(1);
+	$user->setScore($points);
+	$query = $user->save();
+
 	if($points > 9){
 		$to  = $user->getEmail(); // note the comma
 
@@ -112,7 +125,12 @@
 		$headers .= 'From: Wonder Eight <salim@wondereight.com>' . "\r\n";
 
 		// Mail it
-		mail($to, $subject, $message, $headers);
+		@mail($to, $subject, $message, $headers);
 	}
+
+	if(isset($_SESSION['userid']))
+	  unset($_SESSION['userid']);
+
+	session_destroy();
 
 	echo($points);
