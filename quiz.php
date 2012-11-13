@@ -128,11 +128,10 @@ $questions = Questions::retrieveAll($conn);
 
 						<div class="winner">
 							<h2>
-								Congratulations!<br />
-								You’ve won an<br />
-								invitation for two!
+								WOW! Talk about seizing the day :)<br />
+								We'll call you as soon as we open!<br /> 
+								Congrats!
 							</h2>
-							<p>We’re emailing you with details,<br /> meanwhile...</p>
 							<h3>tell your friends!</h3>
 
 							<ul>
@@ -151,11 +150,13 @@ $questions = Questions::retrieveAll($conn);
 
 						<div class="loose">
 							<h2>
-								Sorry<br />
-								You’ve won an<br />
-								invitation for two!
+								We're sorry you've lost.<br />
+								We promise to make it up to you<br /> 
+								with heavenly treats when you visit us<br /> :)
 							</h2>
-							<p>We’re emailing you with details,<br /> meanwhile...</p>
+							<p>We promise to make it up to you<br /> 
+								with heavenly treats <br />
+								when you visit us :)</p>
 							<h3>tell your friends!</h3>
 
 							<ul>
