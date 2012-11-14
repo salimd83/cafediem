@@ -154,9 +154,6 @@ $questions = Questions::retrieveAll($conn);
 								We promise to make it up to you<br /> 
 								with heavenly treats when you visit us<br /> :)
 							</h2>
-							<p>We promise to make it up to you<br /> 
-								with heavenly treats <br />
-								when you visit us :)</p>
 							<h3>tell your friends!</h3>
 
 							<ul>

@@ -199,7 +199,9 @@ $(function(){
 												.html('please answer all the \
 													question before \
 													proceeding')
-												.slideDown('normal', 'swing')
+												.slideDown('normal', 'swing');
+
+											$('#submit').removeAttr('disabled');
 										}
 									}
 			);
