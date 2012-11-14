@@ -1,8 +1,8 @@
-<?php session_start() ?>
-
 <?php 
+session_start();
 if(!isset($_SESSION['userid'])){
 	header('Location: ../subscribe.php');
+	exit;
 }
 ?>
 

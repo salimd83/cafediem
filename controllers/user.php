@@ -1,15 +1,7 @@
 <?php
 session_start();
 
-require('../config.php');
-
-$conn = new mysqli(HOST, USER, PASS, DATABASE);
-
-/* check connection */
-if ($conn->connect_errno) {
-    printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
-}
+require('../includes/create_conn.php');
 
 if(isset($_GET['a']) && $_GET['a']=='create'){
 
@@ -42,8 +34,8 @@ if(isset($_GET['a']) && $_GET['a']=='create'){
 	    }else{
 	    	//create new user
 	    	$query = "insert into users (name, email) values ('{$name}', '{$email}')";
-	    	echo $query;
-	    	if ($conn->query($query) === TRUE) {
+	    	//echo $query;
+	    	if ($conn->query($query)) {
 			    $_SESSION['userid']= $conn->insert_id;
 			    header('Location: ../quiz.php');
 				exit;
