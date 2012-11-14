@@ -87,8 +87,8 @@ input#submit{
 	cursor: pointer;
 }
 
-#wrapper{ width: 3000px; position: absolute; top: 0; left: 0; }
-#questions{ overflow: hidden; width: 3000px; }
+#wrapper{ width: 6000px; position: absolute; top: 0; left: 0; }
+#questions{ overflow: hidden; width: 6000px; }
 
 div.batch-wrapper{wid th: 970px; float: left;}
 div.batch{ width: 970px; padding-left: 342px; float: left; }

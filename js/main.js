@@ -104,9 +104,10 @@ $(function(){
 
 		$('#questions .batch div.question').not('.socials').each(function(){
 			if(i<9){
+				console.log($(this).find('select ').html());
 				if(	
 					$(this).find('select').length && 
-					($(this).find('select').val()==0 || typeof $(this).find('select').val() === 'undefined')
+					($(this).find('select  option:selected').val()==0 || typeof $(this).find('select  option:selected').val() === 'undefined')
 				  )
 				{
 					if($(this).find('input.other.selected').length && 
@@ -165,16 +166,16 @@ $(function(){
 	$("#submit").click(function(){
 		var query = {}
 		var empty2 = new Array();
-		var i = 0;
+		var i = 9;
 
 		$('#submit').attr('disabled', 'disabled');
 
 		$('#questions .batch div.question').not('.socials').each(function(){
 			if(i<18){
-
+				console.log($(this).find('select option:selected:first').val());
 				if(	
 					$(this).find('select').length && 
-					($(this).find('select').val()==0 || typeof $(this).find('select').val() === 'undefined')
+					($(this).find('select option:selected').val()==0 || typeof $(this).find('select option:selected').val() === 'undefined')
 				  )
 				{
 					if($(this).find('input.other.selected').length && 
@@ -219,7 +220,7 @@ $(function(){
 				if(i < 18){
 					if($(this).find('select').length){
 						var select = $(this).find('select');
-						query[select.attr('name')] = select.val();
+						query[select.attr('name')] = $(this).find('select option:selected').val();
 						// if(elem.length){
 						// 	query['data_'+i] = "";
 						// 	elem.each(function(){
