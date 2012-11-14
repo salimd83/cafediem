@@ -1,21 +1,22 @@
 $(function(){
-	$('#questions div.socials .logo-quiz a:last').click(
-		function(){ 
-			$('div:first', $(this).closest('div.socials'))
-				.fadeOut('normal', 'swing');
-			$('div:last', $(this).closest('div.socials'))
-				.fadeIn('narmal', 'swing');
-			return false;
-		}//,
-		// function(){
-		// 	$('div:first', $(this)).fadeIn('normal', 'swing');
-		// 	$('div:last', $(this)).fadeOut('narmal', 'swing');
-		// }
-	);
+	// $('#questions div.socials .logo-quiz a:last').click(
+	// 	function(){ 
+	// 		$('div:first', $(this).closest('div.socials'))
+	// 			.fadeOut('normal', 'swing');
+	// 		$('div:last', $(this).closest('div.socials'))
+	// 			.fadeIn('narmal', 'swing');
+	// 		return false;
+	// 	}//,
+	// 	// function(){
+	// 	// 	$('div:first', $(this)).fadeIn('normal', 'swing');
+	// 	// 	$('div:last', $(this)).fadeOut('narmal', 'swing');
+	// 	// }
+	// );
 
 	$("#questions div.batch div.question").each(function(){
 		if($(this).find('ul li').length > 5){
 			$(this).width(($(this).width()*2) + 20);
+			$(this).find('ul').css('margin-left', '9px');
 			$(this).find('.right h2').width($(this).find('.right h2').width() * 2);
 		}
 	});
@@ -35,15 +36,16 @@ $(function(){
 	    	$(this).next('input').hide('normal', function(){$(this).remove()});
 	    }
 	});
+
 	$(".choices").change();
 
-	$('#questions div.socials .m-over').click(function(){ 
-		$('div:first', $(this).closest('div.socials'))
-			.fadeIn('normal', 'swing');
-		$('div:last', $(this).closest('div.socials'))
-			.fadeOut('normal', 'swing');
-		return false;
-	})
+	// $('#questions div.socials .m-over').click(function(){ 
+	// 	$('div:first', $(this).closest('div.socials'))
+	// 		.fadeIn('normal', 'swing');
+	// 	$('div:last', $(this).closest('div.socials'))
+	// 		.fadeOut('normal', 'swing');
+	// 	return false;
+	// })
 
 	$('#questions .batch :not(socials) ul li a').click(function(){
 		if(!$(this).closest('ul').hasClass('multi-2')){
@@ -82,11 +84,13 @@ $(function(){
 	})
 
 	var wdoc = $(document).width();
+	var hdoc = $(document).height() + 400;
 	var margins = wdoc - 970;
 	$('div.batch').css('padding-left', margins/2);
 
 	//$('#questions .batch:last').show();
-	$('.main#quiz').height(1350);
+	//$('.main#quiz').height(1350);
+	$('.main#quiz').height(hdoc);
 	$('.main#quiz').width($(window).width());
 
 	//$('#wrapper, #questions').css({'left': '-1240px'});
@@ -132,7 +136,7 @@ $(function(){
 				duration: 900, 
 				easing:'swing', 
 				onAfter: function(){
-					$('.main#quiz').height(1400);
+					$('.main#quiz').height(hdoc + 50);
 				}});
 
 			$(this).fadeOut();

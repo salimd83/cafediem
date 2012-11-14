@@ -128,7 +128,7 @@ $questions = Questions::retrieveAll($conn);
 
 						<div class="winner">
 							<h2>
-								WOW! Talk about seizing the day :)<br />
+								WOW! Talk about seizing the day<br />
 								We'll call you as soon as we open!<br /> 
 								Congrats!
 							</h2>
@@ -152,18 +152,18 @@ $questions = Questions::retrieveAll($conn);
 							<h2>
 								We're sorry you've lost.<br />
 								We promise to make it up to you<br /> 
-								with heavenly treats when you visit us<br /> :)
+								with heavenly treats <br />when you visit us
 							</h2>
 							<h3>tell your friends!</h3>
 
 							<ul>
 								<li>
-									<a href="#" target="_blank">
+									<a href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&title=Win+two+invitation+for+cafe+Diem%3A" target="_blank">
 										<img src="images/facebook.png">
 									</a>
 								</li>
 								<li>
-									<a href="#" target="_blank">
+									<a href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.com" target="_blank">
 										<img src="images/twitter.png">
 									</a>
 								</li>
