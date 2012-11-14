@@ -125,11 +125,10 @@ if(!isset($_SESSION['userid'])){
 		$headers .= 'From: Wonder Eight <salim@wondereight.com>' . "\r\n";
 
 		// Mail it
-		@mail($to, $subject, $message, $headers);
+		mail($to, $subject, $message, $headers);
 	}
 
-	if(isset($_SESSION['userid']))
-	  unset($_SESSION['userid']);
+	if(isset($_SESSION['userid'])) unset($_SESSION['userid']);
 
 	session_destroy();
 
