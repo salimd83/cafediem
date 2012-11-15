@@ -104,7 +104,7 @@ $(function(){
 
 		$('#questions .batch div.question').not('.socials').each(function(){
 			if(i<9){
-				console.log($(this).find('select ').html());
+				//console.log($(this).find('select ').html());
 				if(	
 					$(this).find('select').length && 
 					($(this).find('select  option:selected').val()==0 || typeof $(this).find('select  option:selected').val() === 'undefined')
@@ -166,13 +166,13 @@ $(function(){
 	$("#submit").click(function(){
 		var query = {}
 		var empty2 = new Array();
-		var i = 9;
+		var i = 0;
 
 		$('#submit').attr('disabled', 'disabled');
 
 		$('#questions .batch div.question').not('.socials').each(function(){
 			if(i<18){
-				console.log($(this).find('select option:selected:first').val());
+				//console.log($(this).find('select option:selected:first').val());
 				if(	
 					$(this).find('select').length && 
 					($(this).find('select option:selected').val()==0 || typeof $(this).find('select option:selected').val() === 'undefined')
@@ -183,10 +183,11 @@ $(function(){
 					   $(this).find('input.other.selected').val() != '')
 					{
 						var other = $(this).find('input.other');
-						$(this).find('select').append("<option value='"+other.val()+"' selected='selected'>"+other.val()+"</option>")
-
-					}else{
+						$(this).find('select').append("<option value='"+other.val()+"' selected='selected'>"+other.val()+"</option>");
+						//console.log("input: "+$(this).find('select option:selected:first').val());
+					}else if($(this).find('select option:selected').length < 2){
 						empty2[i] = i;
+						//console.log("select: valuve="+$(this).find('select option:selected:first').val()+"; name="+ $(this).find('select').attr('name'));
 					}
 				}
 
