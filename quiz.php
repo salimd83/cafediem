@@ -136,12 +136,12 @@ $questions = Questions::retrieveAll($conn);
 
 							<ul>
 								<li>
-									<a href="#" target="_blank">
+									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&title=Win+two+invitation+for+cafe+Diem%3A" target="_blank">
 										<img src="images/facebook.png">
 									</a>
 								</li>
 								<li>
-									<a href="#" target="_blank">
+									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.com" target="_blank">
 										<img src="images/twitter.png">
 									</a>
 								</li>
@@ -158,12 +158,12 @@ $questions = Questions::retrieveAll($conn);
 
 							<ul>
 								<li>
-									<a href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&title=Win+two+invitation+for+cafe+Diem%3A" target="_blank">
+									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&title=Win+two+invitation+for+cafe+Diem%3A" target="_blank">
 										<img src="images/facebook.png">
 									</a>
 								</li>
 								<li>
-									<a href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.com" target="_blank">
+									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.com" target="_blank">
 										<img src="images/twitter.png">
 									</a>
 								</li>

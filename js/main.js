@@ -271,4 +271,21 @@ $(function(){
 	});
 
 	
-})
+});
+
+var windowSizeArray = [ "width=200,height=200",
+                                    "width=550,height=450,scrollbars=yes" ];
+ 
+$(document).ready(function(){
+    $('.socials .facebook, .socials .twitter').click(function (event){
+
+        var url = $(this).attr("href");
+        var windowName = $(this).attr("class");
+        var windowSize = windowSizeArray[$(this).attr("rel")];
+
+        window.open(url, windowName, windowSize);
+
+        event.preventDefault();
+
+    });
+});
