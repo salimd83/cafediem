@@ -319,8 +319,9 @@ div.batch{ width: 970px; padding-left: 342px; float: left; }
 	text-transform: uppercase;
 	margin-top: 10px;
 }
+#questions div.batch div.socials div.winner h3{ margin-top: 40px; }
 #questions div.batch div.socials div.winner p, #questions div.batch div.socials div.loose p
-{ font-family: Arial, Helvetica, sans-serif; font-size: 16px; }
+{ font-family: 'LeagueGothicRegular', Arial, sans-serif; font-size: 22px; }
 
 .link-btn.footer{ width: 100%; margin-top: 0px; clear: both; float: left; }
 .link-btn.footer a{ 
