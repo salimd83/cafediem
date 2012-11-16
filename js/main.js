@@ -142,7 +142,8 @@ $(function(){
 
 			$(this).fadeOut();
 
-			$('.error').slideUp('slow');
+			//$('.error').slideUp('slow');
+			//$('.error').bPopup();
 			
 		}else{
 			
@@ -150,16 +151,19 @@ $(function(){
 										duration: 300, 
 										easing:'swing', 
 										onAfter: function(){
-											$('.error')
-												.html('please answer all the \
-													questions before \
-													proceeding')
-												.slideDown('normal', 'swing')
+											// $('.error')
+											// 	.html('please answer all the \
+											// 		questions before \
+											// 		proceeding')
+											// 	.slideDown('normal', 'swing');
+											$('.error').bPopup({
+												closeClass:'close'
+											});
 										}
 									}
 			);
 		}
-		$('.main#quiz').height($('.main#quiz').height() + 100);
+		//$('.main#quiz').height($('.main#quiz').height() + 100);
 		return false;
 	});
 
@@ -201,17 +205,20 @@ $(function(){
 										duration: 300, 
 										easing:'swing', 
 										onAfter: function(){
-											$('.error')
-												.html('please answer all the \
-													question before \
-													proceeding')
-												.slideDown('normal', 'swing');
+											// $('.error')
+											// 	.html('please answer all the \
+											// 		question before \
+											// 		proceeding')
+											// 	.slideDown('normal', 'swing');
 
+											$('.error').bPopup({
+												closeClass:'close'
+											});
 											$('#submit').removeAttr('disabled');
 										}
 									}
 			);
-			$('.main#quiz').height($('.main#quiz').height() + 100);
+			//$('.main#quiz').height($('.main#quiz').height() + 100);
 			return false
 		}
 		
@@ -287,6 +294,5 @@ $(document).ready(function(){
         window.open(url, windowName, windowSize);
 
         event.preventDefault();
-
     });
 });

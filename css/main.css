@@ -36,8 +36,8 @@ img{ display: block; float: left; }
 }*/
 
 input.selected{
-	background: #231F20 !important;
-	color: white !important;
+	b ackground: #231F20 !important;
+	c olor: white !important;
 }
 
 div.main{ margin: 0 auto; width: 970px; text-align: left; }
@@ -69,11 +69,28 @@ div.main{ margin: 0 auto; width: 970px; text-align: left; }
 	display: none; 
 	padding: 20px; 
 	margin: 20px; 
-	background: #fff;
-	background: rgba(255, 255, 255, 0.5); 
-	color: #900;
+	background: #cac3b6; 
+	color: #000;
+	border-radius: 10px;
+	moz-border-radius: 10px;
+	webkit-border-radius: 10px;
 	text-align: center;
 	width: 885px;
+	font-family: 'LeagueGothicRegular', Arial, sans-serif;
+	font-size: 24px;
+	text-transform: uppercase;
+	padding: 30px 0;
+}
+
+.error a{ 
+	font-weight: normal;
+	font-size: 16px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-family: "arial black", sans-serif;
+	text-decoration: none;
+	color: #000;
 }
 
 .choices option { color: black; }
@@ -319,6 +336,29 @@ div.batch{ width: 970px; padding-left: 342px; float: left; }
 	text-transform: uppercase;
 	margin-top: 10px;
 }
+
+#questions div.batch div.socials div.winner ul li a{ 
+	width: 138px; 
+	height: 125px; 
+	background: url(images/facebook.png) top left no-repeat; 
+}
+
+#questions div.batch div.socials div.winner ul li a.facebook{ 
+	background: url(../images/facebook.png) top left no-repeat; 
+}
+
+#questions div.batch div.socials div.winner ul li a.twitter{  
+	background: url(../images/twitter.png) top left no-repeat; 
+}
+
+#questions div.batch div.socials div.winner ul li a.twitter:hover{  
+	background: url(../images/twitter-over.png) top left no-repeat; 
+}
+
+#questions div.batch div.socials div.winner ul li a.facebook:hover{
+	background: url(../images/facebook-over.png) top left no-repeat;
+}
+
 #questions div.batch div.socials div.winner h3{ margin-top: 40px; }
 #questions div.batch div.socials div.winner p, #questions div.batch div.socials div.loose p
 { font-family: 'LeagueGothicRegular', Arial, sans-serif; font-size: 22px; }

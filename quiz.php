@@ -26,8 +26,8 @@ $questions = Questions::retrieveAll($conn);
 	<link type="text/css" rel="stylesheet" href="css/main.css" />
 
 	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery.scrollTo-1.4.3.1-min.js">
-	</script>
+	<script type="text/javascript" src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script type="text/javascript" src="js/jquery.bpopup-0.7.0.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
 	<title>Title goes here</title>
@@ -39,7 +39,7 @@ $questions = Questions::retrieveAll($conn);
 		<div id="wrapper">
 			<div id="questions">
 				<div class="batch">
-					<p class="error"></p>
+					<p class="error">Please answer all the questions before proceeding <a class="close" href="#">x</a></p>
 
 					<?php
 						$i=0;
@@ -110,7 +110,7 @@ $questions = Questions::retrieveAll($conn);
 								</div> <!-- END of (first) .batch -->
 
 								<div class="batch">
-									<p class="error"></p>
+									<p class="error close">Please answer all the questions before proceeding <a href="#">x</a></p>
 
 							<?php endif; ?>
 
@@ -137,23 +137,26 @@ $questions = Questions::retrieveAll($conn);
 							<ul>
 								<li>
 									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&title=Win+two+invitation+for+cafe+Diem%3A" target="_blank">
-										<img src="images/facebook.png">
+
 									</a>
 								</li>
 								<li>
 									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.com" target="_blank">
-										<img src="images/twitter.png">
+
 									</a>
 								</li>
 							</ul>
 						</div>
 
 						<div class="loose">
-							<h2>
-								We're sorry you've lost.<br />
-								We promise to make it up to you<br /> 
-								with heavenly treats <br />when you visit us
-							</h2>
+							<h2>We're sorry you've lost!</h2>
+							<p
+								style="font-size: 28px;text-transform: uppercase;margin-bottom: 24px;"
+							>
+								We promise to make it<br />  up to you
+								with heavenly<br /> treats when you visit us
+							</p>
+							
 							<h3>tell your friends</h3>
 
 							<ul>
@@ -182,6 +185,8 @@ $questions = Questions::retrieveAll($conn);
 	<div class="link-btn footer">
 		<a href="quiz.php">one more batch to go! <span style="font-family:arial, sans-serif; font-size:52px;">&rsaquo;</span></a>
 	</div>
+	
+	
 
 </body>
 
