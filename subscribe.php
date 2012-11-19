@@ -2,7 +2,10 @@
 
 <html>
 
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon" 
+      type="image/png" 
+      href="./favicon.png">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link type="text/css" rel="stylesheet" href="css/reset.css" />
 	<link type="text/css" rel="stylesheet" href="css/main.css" />
@@ -10,6 +13,8 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+
+	<link rel="shortcut icon" href="./favicon.png" />
 
 	<title>Cafe Diem</title>
 </head>

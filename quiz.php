@@ -20,8 +20,12 @@ $questions = Questions::retrieveAll($conn);
 
 <html>
 
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon" 
+      type="image/png" 
+      href="./favicon.png">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta type="description" content="Cafe Diem, comming soon" />
 	<link type="text/css" rel="stylesheet" href="css/reset.css" />
 	<link type="text/css" rel="stylesheet" href="css/main.css" />
 
@@ -30,7 +34,9 @@ $questions = Questions::retrieveAll($conn);
 	<script type="text/javascript" src="js/jquery.bpopup-0.7.0.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
-	<title>Title goes here</title>
+	<link rel="shortcut icon" href="./favicon.png" />
+
+	<title>CafeDiem Comming soon</title>
 </head>
 
 <body>
@@ -136,7 +142,7 @@ $questions = Questions::retrieveAll($conn);
 
 							<ul>
 								<li>
-									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&title=Win+two+invitation+for+cafe+Diem%3A" target="_blank">
+									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&t=test" target="_blank">
 
 									</a>
 								</li>
@@ -161,7 +167,7 @@ $questions = Questions::retrieveAll($conn);
 
 							<ul>
 								<li>
-									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&title=Win+two+invitation+for+cafe+Diem%3A" target="_blank">
+									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&t=test" target="_blank">
 										<img src="images/facebook.png">
 									</a>
 								</li>
@@ -187,7 +193,13 @@ $questions = Questions::retrieveAll($conn);
 	</div>
 	
 	
-
+	<meta property="og:title" content="CafeDiem: win an invitation for 2" />
+    <meta property="og:type" content="company" />
+    <meta property="og:url" content="http://www.cafediem.com" />
+    <meta property="og:image" content="http://www.cafediem.com/logo-banner-no-data.gif" />
+    <meta property="og:site_name" content="Cafe Diem" />
+    <meta property="og:description"
+              content="Cafe DiemComming soon."/>
 </body>
 
 </html>
