@@ -52,6 +52,17 @@ $questions = Questions::retrieveAll($conn);
 </head>
 
 <body>
+	
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=381454791918432";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+
 
 	<div class="main" id="quiz">
 		<div id="wrapper">
@@ -155,7 +166,7 @@ $questions = Questions::retrieveAll($conn);
 							<ul>
 								<li>
 									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&t=test" target="_blank">
-
+										
 									</a>
 								</li>
 								<li>
@@ -199,6 +210,7 @@ $questions = Questions::retrieveAll($conn);
 		</div><!-- END #wrapper -->
 		<div class="clear"></div>
 	</div><!-- END  .main -->
+	<div class="fb-send" data-href="http://cafediem.com" data-font="arial" style="position:absolute; top:20px; left:20px; z-index:1000"></div>
 
 	<div class="link-btn footer">
 		<a href="quiz.php">one more batch to go! <span style="font-family:arial, sans-serif; font-size:52px;">&rsaquo;</span></a>
