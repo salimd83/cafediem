@@ -36,7 +36,7 @@ $questions = Questions::retrieveAll($conn);
 	<meta property="og:image" content="http://www.cafediem.com/logo-banner-no-data.gif" />
 	<meta property="og:site_name" content="Cafe Diem" />
 	<meta property="og:description" content="Cafe Diem comming soon" />
-	<meta property="fb:admins" content="801915383" />
+	<meta property="fb:admins" content="487377867960864" />
 	
 	<link type="text/css" rel="stylesheet" href="css/reset.css" />
 	<link type="text/css" rel="stylesheet" href="css/main.css" />
@@ -52,17 +52,6 @@ $questions = Questions::retrieveAll($conn);
 </head>
 
 <body>
-	
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=381454791918432";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-
-
 
 	<div class="main" id="quiz">
 		<div id="wrapper">
@@ -165,7 +154,7 @@ $questions = Questions::retrieveAll($conn);
 
 							<ul>
 								<li>
-									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&t=test" target="_blank">
+									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http://cafediem.com&t=test" target="_blank">
 										
 									</a>
 								</li>
@@ -190,7 +179,7 @@ $questions = Questions::retrieveAll($conn);
 
 							<ul>
 								<li>
-									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fcafediem.com&t=test" target="_blank">
+									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http://cafediem.com&t=test" target="_blank">
 										<img src="images/facebook.png">
 									</a>
 								</li>

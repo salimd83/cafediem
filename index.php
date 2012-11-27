@@ -14,11 +14,11 @@
 	
 	<meta property="og:title" content="Cafe Diem: win an invitation for two" />
 	<meta property="og:type" content="restaurant" />
-	<meta property="og:url" content="http://cafediem.com" />
+	<meta property="og:url" content="http://salimdirani.com" />
 	<meta property="og:image" content="http://www.cafediem.com/logo-banner-no-data.gif" />
 	<meta property="og:site_name" content="Cafe Diem" />
 	<meta property="og:description" content="Cafe Diem comming soon" />
-	<meta property="fb:admins" content="801915383" />
+	<meta property="fb:admins" content="487377867960864" />
 	
 	<link type="text/css" rel="stylesheet" href="css/reset.css" />
 	<link type="text/css" rel="stylesheet" href="css/main.css" />
