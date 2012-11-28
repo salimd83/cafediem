@@ -85,8 +85,11 @@ $(function(){
 
 	var wdoc = $(document).width();
 	var hdoc = $(document).height() + 400;
-	if(navigator.userAgent.match(/iPad/i)){
+	if(navigator.userAgent.match(/iPad/i) != null){
 		var hdoc = $(document).height() + 750;
+	}
+	if(navigator.platform.indexOf("iPhone") != -1){
+		var hdoc = $(document).height() + 900;
 	}
 	var margins = wdoc - 970;
 	$('div.batch').css('padding-left', margins/2);
