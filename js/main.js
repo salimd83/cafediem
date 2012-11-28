@@ -84,7 +84,7 @@ $(function(){
 	})
 
 	var wdoc = $(document).width();
-	var hdoc = $(document).height() + 400;
+	var hdoc = $(document).height() + 600;
 	var margins = wdoc - 970;
 	$('div.batch').css('padding-left', margins/2);
 
