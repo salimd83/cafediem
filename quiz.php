@@ -23,19 +23,19 @@ $questions = Questions::retrieveAll($conn);
       xmlns:fb="http://www.facebook.com/2008/fbml">
 
 <head profile="http://www.w3.org/2005/10/profile">
-<link rel="icon" 
-      type="image/png" 
-      href="./favicon.png">
+	<link rel="icon" 
+	      type="image/png" 
+	      href="./favicon.png">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="title" content="Cafe Diem, comming soon" />
-	<meta name="description" content="Cafe Diem, comming soon" />
+	<meta name="title" content="Cafe Diem, coming soon" />
+	<meta name="description" content="Cafe Diem, coming soon" />
 	
 	<meta property="og:title" content="Cafe Diem: win an invitation for two" />
 	<meta property="og:type" content="restaurant" />
 	<meta property="og:url" content="http://cafediem.com" />
 	<meta property="og:image" content="http://www.cafediem.com/logo-banner-no-data.gif" />
 	<meta property="og:site_name" content="Cafe Diem" />
-	<meta property="og:description" content="Cafe Diem comming soon" />
+	<meta property="og:description" content="Cafe Diem coming soon" />
 	<meta property="fb:admins" content="487377867960864" />
 	
 	<link type="text/css" rel="stylesheet" href="css/reset.css" />
@@ -48,7 +48,7 @@ $questions = Questions::retrieveAll($conn);
 
 	<link rel="shortcut icon" href="./favicon.png" />
 
-	<title>CafeDiem Comming soon</title>
+	<title>CafeDiem Coming soon</title>
 </head>
 
 <body>
@@ -204,7 +204,6 @@ $questions = Questions::retrieveAll($conn);
 	<div class="link-btn footer">
 		<a href="quiz.php">one more batch to go! <span style="font-family:arial, sans-serif; font-size:52px;">&rsaquo;</span></a>
 	</div>
-	
 </body>
 
 </html>

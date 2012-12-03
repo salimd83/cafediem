@@ -84,7 +84,7 @@ $(function(){
 	})
 
 	var wdoc = $(document).width();
-	var hdoc = $(document).height() + 400;
+	var hdoc = $(document).innerHeight() + 400;
 	if(navigator.userAgent.match(/iPad/i) != null){
 		var hdoc = $(document).height() + 750;
 	}
@@ -92,6 +92,7 @@ $(function(){
 		var hdoc = $(document).height() + 900;
 	}
 	var margins = wdoc - 970;
+	hdoc = $('#wrapper').height() + 40;
 	$('div.batch').css('padding-left', margins/2);
 
 	//$('#questions .batch:last').show();

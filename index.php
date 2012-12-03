@@ -9,15 +9,15 @@
       type="image/png" 
       href="./favicon.png">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="description" content="Cafe Diem, comming soon" />
-	<meta name="title" content="Cafe Diem, comming soon" />
+	<meta name="description" content="Cafe Diem, coming soon" />
+	<meta name="title" content="Cafe Diem, coming soon" />
 	
 	<meta property="og:title" content="Cafe Diem: win an invitation for two" />
 	<meta property="og:type" content="restaurant" />
 	<meta property="og:url" content="http://salimdirani.com" />
 	<meta property="og:image" content="http://www.cafediem.com/logo-banner-no-data.gif" />
 	<meta property="og:site_name" content="Cafe Diem" />
-	<meta property="og:description" content="Cafe Diem comming soon" />
+	<meta property="og:description" content="Cafe Diem coming soon" />
 	<meta property="fb:admins" content="487377867960864" />
 	
 	<link type="text/css" rel="stylesheet" href="css/reset.css" />
@@ -29,7 +29,7 @@
 
 	<link rel="shortcut icon" href="./favicon.png" />
 
-	<title>Cafe Diem comming soon</title>
+	<title>Cafe Diem coming soon</title>
 </head>
 
 <body>
