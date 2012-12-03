@@ -70,7 +70,7 @@ div.main{ margin: 0 auto; width: 970px; text-align: left; }
 	background: url('../images/btn-rollover.gif');
 }
 
-.error{ 
+p.error{ 
 	display: none;
 	padding: 20px;
 	margin: 20px;
@@ -400,18 +400,40 @@ a#end-quiz:hover{
 }
 
 .logo-quiz form{
-	padding-top: 100px;
+	padding-top: 55px;
+	text-align: left;
 }
 
 .logo-quiz input{
-	width: 300px;
-	height: 26px;
-	border-radius: 8px;
-	-mox-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	border: none;
+	width: 188px;
+	height: 24px;
+	border-radius: 3px;
+	-mox-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: #e6dcc6 1px solid;
 	padding: 10px;
 	outline: none;
 	font-size: 16px;
-	margin-top: 20px;
+	margin: 5px 0 15px 0;
+	background: #e6dcc6;
+}
+
+.logo-quiz p.error2{
+	color: #f00;
+	padding: 20px 0 0 0;
+	tex t-align: center;
+	margin-left: 115px;
+}
+
+#subscribe input.error{
+	color:#f00;
+	border: #f00 1px solid;
+	display: block;
+	background: #231f20;
+}
+
+#subscribe  div{ margin-left: 115px; }
+#subscribe label{ display: block; clear: both; text-align: left; color: #a19b8b; }
+#subscribe label.error{
+	color: #f00;
 }

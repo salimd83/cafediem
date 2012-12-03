@@ -7,8 +7,9 @@ if(isset($_GET['a']) && $_GET['a']=='create'){
 
 	$name = $_POST['name'];
 	$email = $_POST['email'];
+	$mobile = $_POST['mobile'];
 
-	if(empty($name) || empty($email)){
+	if(empty($name) || empty($email) || empty($mobile)){
 		header('Location: ../subscribe.php?required');
 		exit;
 	}
@@ -33,7 +34,8 @@ if(isset($_GET['a']) && $_GET['a']=='create'){
 			exit;
 	    }else{
 	    	//create new user
-	    	$query = "insert into users (name, email) values ('{$name}', '{$email}')";
+	    	$query = "insert into users (name, email, mobile) values ('{$name}', '{$email}', '{$mobile}')";
+	    	echo $query;
 	    	//echo $query;
 	    	if ($conn->query($query)) {
 			    $_SESSION['userid']= $conn->insert_id;

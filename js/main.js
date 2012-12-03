@@ -285,6 +285,37 @@ $(function(){
 		return false;
 	});
 
+	$('#subscribe').submit(function(){
+		var error = false;
+		if($('input[name=email]').val().match(/^[a-zA-Z0-9_\.\-]+\@([a-zA-Z0-9\-]+\.)+[a-zA-Z0-9]{2,4}$/) == null){
+			$('input[name=email], label[for=email]').addClass('error');
+			error = true;
+		}else{
+			$('input[name=email], label[for=email]').removeClass('error');
+		}
+
+		if($.trim($('input[name=name]').val()) == ""){
+			$('input[name=name], label[for=name]').addClass('error');
+			error = true;
+		}else{
+			$('input[name=name], label[for=name]').removeClass('error');
+		}
+
+		if($.trim($('input[name=mobile]').val()) == ""){
+			$('input[name=mobile], label[for=mobile]').addClass('error');
+			error = true;
+		}else{
+			$('input[name=mobile], label[for=mobile]').removeClass('error');
+		}
+		
+
+		if(error == false){
+			return true;
+		}else{
+			return false;
+		}
+	})
+
 	
 });
 

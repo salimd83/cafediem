@@ -122,7 +122,7 @@ if(!isset($_SESSION['userid'])){
 
 		// Additional headers
 		$headers .= 'To: '.$user->getName().' <'.$user->getEmail().'>' . "\r\n";
-		$headers .= 'From: Wonder Eight <salim@wondereight.com>' . "\r\n";
+		$headers .= 'From: Wonder Eight <info@cafediem.com>' . "\r\n";
 
 		// Mail it
 		mail($to, $subject, $message, $headers);

@@ -4,6 +4,7 @@ class User{
 
 	private $name;
 	private $email;
+	private $mobile;
 	private $hasSubmit;
 	private $submitDate;
 	private $score;
@@ -15,6 +16,7 @@ class User{
 		if(!empty($array)){
 			$this->name = $array['name'];
 			$this->email = $array['email'];
+			$this->mobile = $array['mobile'];
 			$this->hasSubmit = $array['has_submit'];
 			$this->submitDate = $array['submit_date'];
 			$this->score = $array['score'];
@@ -30,6 +32,10 @@ class User{
 
 	public function getEmail(){
 		return $this->email;
+	}
+
+	public function getMobile(){
+		return $this->mobile;
 	}
 
 	public function hasSubmit(){
@@ -56,6 +62,10 @@ class User{
 		$this->email = $email;
 	}
 
+	public function setMobile($mobile){
+		$this->mobile = $mobile;
+	}
+
 	public function setHasSubmit($hasSubmit){
 		$this->hasSubmit = $hasSubmit;
 	}
@@ -75,7 +85,8 @@ class User{
 	public function save(){
 		$query = "update users 
 				  set name='$this->name', 
-				  	  email='$this->email', 
+				  	  email='$this->email',
+				  	  mobile='$this->mobile' 
 				  	  has_submit=$this->hasSubmit, 
 				  	  submit_date='$this->submitDate',
 				  	  score=$this->score
