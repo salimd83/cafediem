@@ -132,22 +132,22 @@ if(!isset($_SESSION['userid'])){
 
 		// Additional headers
 		$headers .= 'To: '.$user->getName().' <'.$user->getEmail().'>' . "\r\n";
-		$headers .= 'From: Wonder Eight <info@cafediem.com>' . "\r\n";
+		$headers .= 'From: Cafe Diem <info@cafediem.fr>' . "\r\n";
 
 		// Mail it
 		mail($to, $subject, $message, $headers);
 
 
 		//send email to admins
-		$to  = 'boudy@wondereight.com'; // note the comma
+		$to  = 'boudy@wondereight.com, care@cjb.me'; // note the comma
 
 		// subject
-		$subject = 'Congratulation you have won';
+		$subject = 'A visitor has won at cafediem.fr';
 		// message
 		$message = "
 		<html>
 		<head>
-		  <title>Congratulation you're a winner.</title>
+		  <title>A visitor has won at cafediem.fr</title>
 		</head>
 		<body>
 			<p>
@@ -155,19 +155,12 @@ if(!isset($_SESSION['userid'])){
 			</p>
 
 			<p>
-				You sure know how to seize the day! You have won an invitation for 2. <br />
-				We're safely guarding your information and we will contact you as soon as we open.
-			</p>
-			<p>
-				Meanwhile, you can keep an eye on us on Facebook :) <br />
-				<a href='http://www.facebook.com/pages/Caf%C3%A9-Diem/487377867960864?ref=stream'>
-					http://www.facebook.com/pages/Caf%C3%A9-Diem/487377867960864?ref=stream
-				</a>
+				A new user have won,<br />
+				Name: {$user->getName()}<br />
+				Email: {$user->getEmail()}<br />
+				Mobile: {$user->getMobile()}<br />
 			</p>
 
-			<p>The Café Diem team</p>
-
-			<p>PS: I thought we can advertise the Facebook page in the email, if u think that's not appropriate do tell me.</p>
 		</body>
 		</html>
 		";
@@ -178,7 +171,7 @@ if(!isset($_SESSION['userid'])){
 
 		// Additional headers
 		$headers .= 'To: '.$user->getName().' <'.$user->getEmail().'>' . "\r\n";
-		$headers .= 'From: Wonder Eight <info@cafediem.com>' . "\r\n";
+		$headers .= 'From: Cafe Diem <info@cafediem.fr>' . "\r\n";
 
 		// Mail it
 		mail($to, $subject, $message, $headers);
