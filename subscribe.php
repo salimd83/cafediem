@@ -16,7 +16,7 @@
 
 	<link rel="shortcut icon" href="./favicon.png" />
 
-	<title>Cafe Diem</title>
+	<title>Cafe Diem :: Artisan Kitchen</title>
 </head>
 
 <body>
@@ -28,10 +28,10 @@
 		<div class="right">
 			<div class="logo-quiz">
 				<?php if(isset($_GET['required'])): ?>
-					<p class="error2">Both Your name and email are required</p>
+					<p class="error2">All fields are required.</p>
 				<?php endif; ?>
 				<?php if(isset($_GET['hasubmit'])): ?>
-					<p class="error2">Your email is already registered</p>
+					<p class="error2">Sorry! You only get one chance in life, Carpe Diem!</p>
 				<?php endif; ?>
 				<form name="subscribe" id="subscribe" action="controllers/user.php?a=create" method="post">
 					<div><label for="name">Full Name*</label><input type="text" name="name" /></div>

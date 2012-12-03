@@ -104,14 +104,24 @@ if(!isset($_SESSION['userid'])){
 		  <title>Congratulation you're a winner.</title>
 		</head>
 		<body>
-		  <p>
-		  	Thank you for participating in CafeDiem quiz.<br />
-		  	You won an invitation for 2 person. Your name and email has been registered in our system.<br />
-		  	You can visit us any time before 01/01/2013.<br />
-		  	<br />
-		  	--<br />
-		  	CafeDiem.com<br /><br />
-		  </p>
+			<p>
+				Hey there!
+			</p>
+
+			<p>
+				You sure know how to seize the day! You have won an invitation for 2. <br />
+				We're safely guarding your information and we will contact you as soon as we open.
+			</p>
+			<p>
+				Meanwhile, you can keep an eye on us on Facebook :) <br />
+				<a href='http://www.facebook.com/pages/Caf%C3%A9-Diem/487377867960864?ref=stream'>
+					http://www.facebook.com/pages/Caf%C3%A9-Diem/487377867960864?ref=stream
+				</a>
+			</p>
+
+			<p>The Café Diem team</p>
+
+			<p>PS: I thought we can advertise the Facebook page in the email, if u think that's not appropriate do tell me.</p>
 		</body>
 		</html>
 		";

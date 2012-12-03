@@ -48,7 +48,7 @@ $questions = Questions::retrieveAll($conn);
 
 	<link rel="shortcut icon" href="./favicon.png" />
 
-	<title>CafeDiem Coming soon</title>
+	<title>CafeDiem :: Artisan Kitchen</title>
 </head>
 
 <body>
@@ -128,7 +128,7 @@ $questions = Questions::retrieveAll($conn);
 								</div> <!-- END of (first) .batch -->
 
 								<div class="batch">
-									<p class="error close">Please answer all the questions before proceeding <a href="#">x</a></p>
+									<p class="error close">Please answer all the questions before proceeding. Did you miss something? <a href="#">x</a></p>
 
 							<?php endif; ?>
 

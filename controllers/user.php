@@ -35,7 +35,6 @@ if(isset($_GET['a']) && $_GET['a']=='create'){
 	    }else{
 	    	//create new user
 	    	$query = "insert into users (name, email, mobile) values ('{$name}', '{$email}', '{$mobile}')";
-	    	echo $query;
 	    	//echo $query;
 	    	if ($conn->query($query)) {
 			    $_SESSION['userid']= $conn->insert_id;

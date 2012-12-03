@@ -29,7 +29,7 @@
 
 	<link rel="shortcut icon" href="./favicon.png" />
 
-	<title>Cafe Diem coming soon</title>
+	<title>Cafe Diem :: Artisan Kitchen</title>
 </head>
 
 <body>
