@@ -14,8 +14,8 @@
 	
 	<meta property="og:title" content="Cafe Diem: win an invitation for two" />
 	<meta property="og:type" content="restaurant" />
-	<meta property="og:url" content="http://salimdirani.com" />
-	<meta property="og:image" content="http://www.cafediem.com/logo-banner-no-data.gif" />
+	<meta property="og:url" content="http://cafediem.fr" />
+	<meta property="og:image" content="http://www.cafediem.fr/logo-banner-no-data.gif" />
 	<meta property="og:site_name" content="Cafe Diem" />
 	<meta property="og:description" content="Cafe Diem coming soon" />
 	<meta property="fb:admins" content="487377867960864" />
@@ -29,7 +29,7 @@
 
 	<link rel="shortcut icon" href="./favicon.png" />
 
-	<title>Cafe Diem :: Artisan Kitchen</title>
+	<title>Café Diem :: Artisan Kitchen</title>
 </head>
 
 <body>

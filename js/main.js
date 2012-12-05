@@ -301,7 +301,7 @@ $(function(){
 			$('input[name=name], label[for=name]').removeClass('error');
 		}
 
-		if($.trim($('input[name=mobile]').val()) == ""){
+		if($('input[name=mobile]').val().match(/^[0-9\-\ \/]+$/) == null){
 			$('input[name=mobile], label[for=mobile]').addClass('error');
 			error = true;
 		}else{

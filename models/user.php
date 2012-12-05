@@ -86,11 +86,12 @@ class User{
 		$query = "update users 
 				  set name='$this->name', 
 				  	  email='$this->email',
-				  	  mobile='$this->mobile' 
+				  	  mobile='$this->mobile', 
 				  	  has_submit=$this->hasSubmit, 
 				  	  submit_date='$this->submitDate',
 				  	  score=$this->score
 				  where id = $this->id";
+		
 		$this->conn->query($query);
 		return $query;
 	}

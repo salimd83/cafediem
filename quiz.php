@@ -32,8 +32,8 @@ $questions = Questions::retrieveAll($conn);
 	
 	<meta property="og:title" content="Cafe Diem: win an invitation for two" />
 	<meta property="og:type" content="restaurant" />
-	<meta property="og:url" content="http://cafediem.com" />
-	<meta property="og:image" content="http://www.cafediem.com/logo-banner-no-data.gif" />
+	<meta property="og:url" content="http://cafediem.fr" />
+	<meta property="og:image" content="http://www.cafediem.fr/logo-banner-no-data.gif" />
 	<meta property="og:site_name" content="Cafe Diem" />
 	<meta property="og:description" content="Cafe Diem coming soon" />
 	<meta property="fb:admins" content="487377867960864" />
@@ -48,7 +48,7 @@ $questions = Questions::retrieveAll($conn);
 
 	<link rel="shortcut icon" href="./favicon.png" />
 
-	<title>CafeDiem :: Artisan Kitchen</title>
+	<title>Café Diem :: Artisan Kitchen</title>
 </head>
 
 <body>
@@ -146,20 +146,20 @@ $questions = Questions::retrieveAll($conn);
 
 						<div class="winner">
 							<h2>
-								WOW! Talk about seizing the day<br />
-								We'll call you as soon as we open<br /> 
+								WOW! Talk about seizing the day!<br />
+								We'll call you as soon as we open.<br /> 
 								Congrats!
 							</h2>
 							<h3>tell your friends</h3>
 
 							<ul>
 								<li>
-									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http://cafediem.com&t=test" target="_blank">
+									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http://cafediem.fr&t=test" target="_blank">
 										
 									</a>
 								</li>
 								<li>
-									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.com" target="_blank">
+									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.fr" target="_blank">
 
 									</a>
 								</li>
@@ -179,12 +179,12 @@ $questions = Questions::retrieveAll($conn);
 
 							<ul>
 								<li>
-									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http://cafediem.com&t=test" target="_blank">
+									<a rel="0" class="facebook" href="http://www.facebook.com/share.php?u=http://cafediem.fr&t=test" target="_blank">
 										<img src="images/facebook.png">
 									</a>
 								</li>
 								<li>
-									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.com" target="_blank">
+									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.fr" target="_blank">
 										<img src="images/twitter.png">
 									</a>
 								</li>
@@ -199,7 +199,7 @@ $questions = Questions::retrieveAll($conn);
 		</div><!-- END #wrapper -->
 		<div class="clear"></div>
 	</div><!-- END  .main -->
-	<div class="fb-send" data-href="http://cafediem.com" data-font="arial" style="position:absolute; top:20px; left:20px; z-index:1000"></div>
+	<div class="fb-send" data-href="http://cafediem.fr" data-font="arial" style="position:absolute; top:20px; left:20px; z-index:1000"></div>
 
 	<div class="link-btn footer">
 		<a href="quiz.php">one more batch to go! <span style="font-family:arial, sans-serif; font-size:52px;">&rsaquo;</span></a>

@@ -421,8 +421,8 @@ a#end-quiz:hover{
 .logo-quiz p.error2{
 	color: #f00;
 	padding: 20px 0 0 0;
-	tex t-align: center;
-	margin-left: 115px;
+	text-align: center;
+	m argin-left: 115px;
 }
 
 #subscribe input.error{

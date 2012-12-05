@@ -119,9 +119,8 @@ if(!isset($_SESSION['userid'])){
 				</a>
 			</p>
 
-			<p>The Café Diem team</p>
+			<p>The Caf&eacute; Diem team</p>
 
-			<p>PS: I thought we can advertise the Facebook page in the email, if u think that's not appropriate do tell me.</p>
 		</body>
 		</html>
 		";
@@ -132,19 +131,19 @@ if(!isset($_SESSION['userid'])){
 
 		// Additional headers
 		$headers .= 'To: '.$user->getName().' <'.$user->getEmail().'>' . "\r\n";
-		$headers .= 'From: Cafe Diem <info@cafediem.fr>' . "\r\n";
+		$headers .= 'From: Café Diem - Artisan Kitchen <info@cafediem.fr>' . "\r\n";
 
 		// Mail it
 		mail($to, $subject, $message, $headers);
 
 
 		//send email to admins
-		$to  = 'boudy@wondereight.com, care@cjb.me'; // note the comma
+		$to2  = 'boudy@wondereight.com, care@cjb.me'; // note the comma
 
 		// subject
-		$subject = 'A visitor has won at cafediem.fr';
+		$subject2 = 'A visitor has won at cafediem.fr';
 		// message
-		$message = "
+		$message2 = "
 		<html>
 		<head>
 		  <title>A visitor has won at cafediem.fr</title>
@@ -166,15 +165,15 @@ if(!isset($_SESSION['userid'])){
 		";
 
 		// To send HTML mail, the Content-type header must be set
-		$headers  = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		$headers2  = 'MIME-Version: 1.0' . "\r\n";
+		$headers2 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 		// Additional headers
-		$headers .= 'To: '.$user->getName().' <'.$user->getEmail().'>' . "\r\n";
-		$headers .= 'From: Cafe Diem <info@cafediem.fr>' . "\r\n";
+		$headers2 .= 'To: Boudy Nasrala <boudy@wondereight.com>' . "\r\n";
+		$headers2 .= 'From: Café Diem - Artisan Kitchen <info@cafediem.fr>' . "\r\n";
 
 		// Mail it
-		mail($to, $subject, $message, $headers);
+		mail($to2, $subject2, $message2, $headers2);
 	}
 
 	if(isset($_SESSION['userid'])) unset($_SESSION['userid']);
