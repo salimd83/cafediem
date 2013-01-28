@@ -27,15 +27,15 @@ $questions = Questions::retrieveAll($conn);
 	      type="image/png" 
 	      href="./favicon.png">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="title" content="Cafe Diem, coming soon" />
-	<meta name="description" content="Cafe Diem, coming soon" />
+	<meta name="title" content="CAFE DIEM, coming soon" />
+	<meta name="description" content="CAFE DIEM, coming soon" />
 	
-	<meta property="og:title" content="Cafe Diem: win an invitation for two" />
+	<meta property="og:title" content="CAFE DIEM: win an invitation for two" />
 	<meta property="og:type" content="restaurant" />
 	<meta property="og:url" content="http://cafediem.fr" />
 	<meta property="og:image" content="http://www.cafediem.fr/logo-banner-no-data.gif" />
-	<meta property="og:site_name" content="Cafe Diem" />
-	<meta property="og:description" content="Cafe Diem coming soon" />
+	<meta property="og:site_name" content="CAFE DIEM" />
+	<meta property="og:description" content="CAFE DIEM coming soon" />
 	<meta property="fb:admins" content="487377867960864" />
 	
 	<link type="text/css" rel="stylesheet" href="css/reset.css" />
@@ -48,7 +48,7 @@ $questions = Questions::retrieveAll($conn);
 
 	<link rel="shortcut icon" href="./favicon.png" />
 
-	<title>Café Diem :: Artisan Kitchen</title>
+	<title>CAFE DIEM :: Artisan Kitchen</title>
 </head>
 
 <body>
@@ -72,13 +72,23 @@ $questions = Questions::retrieveAll($conn);
 								<dl>
 									<dt>
 										<div class="left"><?php printf('%02d',$i); ?></div>
-										<div class="right"><h2><?php echo $sQuestion; ?></h2></div>
+										<?php if($i==11 || $i==12 || $i==13): ?>
+											<div class="right" style="margin-left:10px;"><h2><?php echo $sQuestion; ?></h2></div>
+										<?php else: ?>
+											<div class="right"><h2><?php echo $sQuestion; ?></h2></div>
+										<?php endif; ?>
 									</dt>
 									<dd>
 										
 
 										<?php if($type == 'open'): ?>
-											<textarea placeholder="Answer goes here..." name="<?php echo $id; ?>"></textarea>
+											<?php if($id == 20): ?>
+												<textarea class="long" 
+														  placeholder="Answer goes here..." 
+														  name="<?php echo $id; ?>"></textarea>
+											<?php else: ?>
+												<textarea placeholder="Answer goes here..." name="<?php echo $id; ?>"></textarea>
+											<?php endif; ?>
 										<?php else: ?>
 
 											<select 
@@ -105,7 +115,7 @@ $questions = Questions::retrieveAll($conn);
 													<?php $ulContent .= "<li id='".$choice->getId()."'><a href='#'>{$answer}</a></li>"; ?>
 												<?php endforeach; ?>
 
-												<?php if($i <= 2): ?>
+												<?php if($i <= 3): ?>
 													<!-- <option class="other" value="other">Other</option> -->
 													<?php $ulContent .= "<li><input type='text' class='other' placeholder='other' /></li>"; ?>
 												<?php endif; ?>
@@ -123,7 +133,7 @@ $questions = Questions::retrieveAll($conn);
 								</dl>
 							</div>
 
-							<?php if($i == 9): ?>
+							<?php if($i == 11): ?>
 
 								</div> <!-- END of (first) .batch -->
 
@@ -139,8 +149,8 @@ $questions = Questions::retrieveAll($conn);
 					<div class="socials">
 						<div class="m-default">
 							<div class="logo-quiz">
-								<p>AAAND WE’RE DONE!</p>
 								<input type="button" id="submit" value="Did I win?" />
+								<p>Results are based on a chance of 1 out of 5 so cross your fingers!</p>
 							</div>
 						</div>
 
@@ -159,7 +169,7 @@ $questions = Questions::retrieveAll($conn);
 									</a>
 								</li>
 								<li>
-									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.fr" target="_blank">
+									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=I+won+an+invitation+for+2+with+CAFE+DIEM!+Try+your+luck+too! &url=http%3A%2F%2Fcafediem.fr" target="_blank">
 
 									</a>
 								</li>
@@ -184,7 +194,7 @@ $questions = Questions::retrieveAll($conn);
 									</a>
 								</li>
 								<li>
-									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=Win+two+invitation+for+cafe+Diem%3A&url=http%3A%2F%2Fcafediem.fr" target="_blank">
+									<a rel="1" class="twitter" href="https://twitter.com/intent/tweet?text=I+won+an+invitation+for+2+with+CAFE+DIEM!+Try+your+luck+too! &url=http%3A%2F%2Fcafediem.fr" target="_blank">
 										<img src="images/twitter.png">
 									</a>
 								</li>

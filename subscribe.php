@@ -16,7 +16,7 @@
 
 	<link rel="shortcut icon" href="./favicon.png" />
 
-	<title>Cafe Diem :: Artisan Kitchen</title>
+	<title>CAFE DIEM :: Artisan Kitchen</title>
 </head>
 
 <body>
@@ -25,19 +25,24 @@
 		<div class="left">
 			<img src="images/logo-banner.gif" alt="" />
 		</div>
-		<div class="right">
+		<div class="right" style="position: relative">
 			<div class="logo-quiz">
 				<?php if(isset($_GET['required'])): ?>
 					<p class="error2">All fields are required.</p>
+				<?php elseif(isset($_GET['hasubmit'])): ?>
+					<div id="hasubmit">
+						<p>SORRY!<br />
+						YOU ONLY GET ONE CHANCE IN LIFE.<br />
+						CARPE DIEM!</p>
+					</div>
+				<?php else: ?>
+					<form name="subscribe" id="subscribe" action="controllers/user.php?a=create" method="post">
+						<div><label for="name">Full Name*</label><input type="text" name="name" /></div>
+						<div><label for="email">Email*</label><input type="text" name="email" /></div>
+						<div><label for="mobile">Mobile Number*</label><input type="text" name="mobile" /></div>
+					</form>
 				<?php endif; ?>
-				<?php if(isset($_GET['hasubmit'])): ?>
-					<p class="error2">Sorry! You only get one chance in life, Carpe Diem!</p>
-				<?php endif; ?>
-				<form name="subscribe" id="subscribe" action="controllers/user.php?a=create" method="post">
-					<div><label for="name">Full Name*</label><input type="text" name="name" /></div>
-					<div><label for="email">Email*</label><input type="text" name="email" /></div>
-					<div><label for="mobile">Mobile Number*</label><input type="text" name="mobile" /></div>
-				</form>
+				
 			</div>
 
 			<div class="link-btn">

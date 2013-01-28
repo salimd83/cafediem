@@ -4,6 +4,8 @@ if(!isset($_SESSION['userid'])){
 	header('Location: ../subscribe.php');
 	exit;
 }
+
+print_r($_POST)
 ?>
 
 <?php 
@@ -39,7 +41,7 @@ if(!isset($_SESSION['userid'])){
 
 		//first check if the choice(=question) exist in the db 
 		//in case the user chose a custom question
-		if(is_numeric($choiceId)){
+		if(is_numeric($choiceId) && $questionId != 20){
 			$user->addChoice($choiceId, $conn);
 
 			$query = "select * from choices where id = $choiceId";
@@ -66,6 +68,12 @@ if(!isset($_SESSION['userid'])){
 				}
 			}
 		}else{
+
+			if($questionId == 20){
+				$age = $choiceId;
+				if($age >= 26) $points++;
+			}
+
 			$query = "select * from choices where LOWER(answer) = LOWER('$choiceId')";
 			//echo $query."\r\n";
 			$result = $conn->query($query);
@@ -92,11 +100,11 @@ if(!isset($_SESSION['userid'])){
 	$user->setScore($points);
 	$query = $user->save();
 
-	if($points > 9){
+	if($points > 14){
 		$to  = $user->getEmail(); // note the comma
 
 		// subject
-		$subject = 'Congratulation you have won';
+		$subject = 'Congratulations! You Have Won!';
 		// message
 		$message = "
 		<html>
@@ -114,31 +122,37 @@ if(!isset($_SESSION['userid'])){
 			</p>
 			<p>
 				Meanwhile, you can keep an eye on us on Facebook :) <br />
-				<a href='http://www.facebook.com/pages/Caf%C3%A9-Diem/487377867960864?ref=stream'>
-					http://www.facebook.com/pages/Caf%C3%A9-Diem/487377867960864?ref=stream
+				<a href='http://www.facebook.com/cafediemrestaurant'>
+					http://www.facebook.com/cafediemrestaurant
 				</a>
 			</p>
 
-			<p>The Caf&eacute; Diem team</p>
+			<p>The CAFE DIEM team</p>
 
 		</body>
 		</html>
 		";
 
+		$headers = "MIME-Version: 1.0\r\n"
+		  ."Content-Type: text/html; charset=utf-8\r\n"
+		  ."Content-Transfer-Encoding: 8bit\r\n"
+		  ."From: =?UTF-8?B?". base64_encode('CAFE DIEM - Artisan Kitchen') ."?= <info@cafediem.com>\r\n"
+		  ."X-Mailer: PHP/". phpversion();
+
 		// To send HTML mail, the Content-type header must be set
-		$headers  = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		//$headers  = 'MIME-Version: 1.0' . "\r\n";
+		//$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
 		// Additional headers
-		$headers .= 'To: '.$user->getName().' <'.$user->getEmail().'>' . "\r\n";
-		$headers .= 'From: Café Diem - Artisan Kitchen <info@cafediem.fr>' . "\r\n";
+		//$headers .= 'To: '.$user->getName().' <'.$user->getEmail().'>' . "\r\n";
+		//$headers .= 'From: CAFE DIEM - Artisan Kitchen <info@cafediem.fr>' . "\r\n";
 
 		// Mail it
-		mail($to, $subject, $message, $headers);
+		mail($to, $subject, $message, $headers, "-f info@cafediem.com");
 
 
 		//send email to admins
-		$to2  = 'boudy@wondereight.com, care@cjb.me'; // note the comma
+		$to2  = 'boudy@wondereight.com, care@cjb.me, salim@wondereight.com, yasmine@wondereight.com'; // note the comma
 
 		// subject
 		$subject2 = 'A visitor has won at cafediem.fr';
@@ -164,16 +178,22 @@ if(!isset($_SESSION['userid'])){
 		</html>
 		";
 
+		$headers = "MIME-Version: 1.0\r\n"
+		  ."Content-Type: text/plain; charset=utf-8\r\n"
+		  ."Content-Transfer-Encoding: 8bit\r\n"
+		  ."From: =?UTF-8?B?". base64_encode('Café Diem - Artisan Kitchen') ."?= <info@cafediem.com>\r\n"
+		  ."X-Mailer: PHP/". phpversion();
+
 		// To send HTML mail, the Content-type header must be set
-		$headers2  = 'MIME-Version: 1.0' . "\r\n";
-		$headers2 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+		//$headers2  = 'MIME-Version: 1.0' . "\r\n";
+		//$headers2 .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
 		// Additional headers
-		$headers2 .= 'To: Boudy Nasrala <boudy@wondereight.com>' . "\r\n";
-		$headers2 .= 'From: Café Diem - Artisan Kitchen <info@cafediem.fr>' . "\r\n";
+		//$headers2 .= 'To: Boudy Nasrala <boudy@wondereight.com>' . "\r\n";
+		//$headers2 .= 'From: Café Diem - Artisan Kitchen <info@cafediem.fr>' . "\r\n";
 
 		// Mail it
-		mail($to2, $subject2, $message2, $headers2);
+		mail($to2, $subject2, $message2, $headers2, "-f info@cafediem.com");
 	}
 
 	if(isset($_SESSION['userid'])) unset($_SESSION['userid']);

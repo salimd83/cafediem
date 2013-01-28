@@ -21,6 +21,11 @@ $(function(){
 		}
 	});
 
+	var question = $(this).find('#questions div.batch div.question:eq(3)')
+	question.width((question.width()*2) + 20);
+	question.find('ul').css('margin-left', '9px');
+	question.find('.right h2').width(question.find('.right h2').width() * 2);
+
 	//make the select null answer turn to gray
 	$(".choices").change(function () {
 	    if($(this).val() == "0") $(this).addClass("empty");
@@ -110,7 +115,7 @@ $(function(){
 		var i = 0;
 
 		$('#questions .batch div.question').not('.socials').each(function(){
-			if(i<9){
+			if(i<11){
 				//console.log($(this).find('select ').html());
 				if(	
 					$(this).find('select').length && 
@@ -138,7 +143,11 @@ $(function(){
 		if(!empty.length){
 			$('#wrapper, #questions').animate({
 				left: -(margins/2 + 970),
-			}, 900, 'swing');
+			}, 900, 'swing', function(){
+				hdoc = $('.batch:eq(1)').height() + 40;
+				$('div.batch').css('padding-left', margins/2);
+				$('.main#quiz').height(hdoc);
+			});
 			
 			$.scrollTo('#questions', { 
 				duration: 900, 
@@ -170,7 +179,7 @@ $(function(){
 									}
 			);
 		}
-		//$('.main#quiz').height($('.main#quiz').height() + 100);
+
 		return false;
 	});
 
@@ -182,7 +191,7 @@ $(function(){
 		$('#submit').attr('disabled', 'disabled');
 
 		$('#questions .batch div.question').not('.socials').each(function(){
-			if(i<18){
+			if(i<20){
 				//console.log($(this).find('select option:selected:first').val());
 				if(	
 					$(this).find('select').length && 
@@ -232,7 +241,7 @@ $(function(){
 		i=0;
 		$('#questions .batch div.question').not('.socials').each(
 			function(){
-				if(i < 18){
+				if(i < 20){
 					if($(this).find('select').length){
 						var select = $(this).find('select');
 						query[select.attr('name')] = $(this).find('select option:selected').val();
@@ -272,7 +281,7 @@ $(function(){
 		  console.log( "Data Saved: " + msg );
 		  var points = parseInt(msg);
 		  $('.m-default').fadeOut(300);
-		  if(points > 9){ 
+		  if(points > 14){ 
 		  	$('.winner').fadeIn(300);
 		  }else{
 		  	$('.loose').fadeIn(300);

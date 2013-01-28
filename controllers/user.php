@@ -14,7 +14,7 @@ if(isset($_GET['a']) && $_GET['a']=='create'){
 		exit;
 	}
 
-	$query = "select * from users where email = '{$email}' limit 1";
+	$query = "SELECT * FROM users WHERE email = '{$email}' OR mobile = '{$mobile}' limit 1";
 
 	if ($result = $conn->query($query)) {
 		$rows = $result->num_rows;

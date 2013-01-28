@@ -9,15 +9,15 @@
       type="image/png" 
       href="./favicon.png">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="description" content="Cafe Diem, coming soon" />
+	<meta name="description" content="CAFE DIEM, coming soon" />
 	<meta name="title" content="Cafe Diem, coming soon" />
 	
-	<meta property="og:title" content="Cafe Diem: win an invitation for two" />
+	<meta property="og:title" content="CAFE DIEM: Artisan Kitchen" />
 	<meta property="og:type" content="restaurant" />
 	<meta property="og:url" content="http://cafediem.fr" />
-	<meta property="og:image" content="http://www.cafediem.fr/logo-banner-no-data.gif" />
-	<meta property="og:site_name" content="Cafe Diem" />
-	<meta property="og:description" content="Cafe Diem coming soon" />
+	<meta property="og:image" content="http://www.cafediem.fr/FB_Ad_pic02.jpg" />
+	<meta property="og:site_name" content="CAFE DIEM" />
+	<meta property="og:description" content="I won an invitation for 2 with CAFE DIEM! Try your luck too! " />
 	<meta property="fb:admins" content="487377867960864" />
 	
 	<link type="text/css" rel="stylesheet" href="css/reset.css" />
@@ -29,7 +29,7 @@
 
 	<link rel="shortcut icon" href="./favicon.png" />
 
-	<title>Café Diem :: Artisan Kitchen</title>
+	<title>CAFE DIEM :: Artisan Kitchen</title>
 </head>
 
 <body>

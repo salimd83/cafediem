@@ -10,15 +10,19 @@ require_once('../models/user.php');
 require_once('../includes/create_conn.php');
 
 $users = Users::retrieveAll($conn);
-$isWinner = '';
-if($score >= 9){
-	$isWinner = 'Yes';
-}
+
 ?>
 
 Full Name, Email, Mobile, Submit Date, Score, is winner
 <?php
 foreach($users as $user){
+	$isWinner = '';
+	$score = $user->getScore();
+	if($score > 14){
+		$isWinner = 'Yes';
+	}else{
+		$isWinner = 'No';
+	}
 	echo "{$user->getName()},"; 
 	echo "{$user->getEmail()},";
 	echo "{$user->getMobile()},"; 
